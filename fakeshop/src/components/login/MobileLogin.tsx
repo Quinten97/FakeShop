@@ -1,6 +1,7 @@
 import React from "react";
 import { Input } from "../input/Input";
 import styled from "@emotion/styled";
+import { Button } from "../button/StyledButton";
 
 const StyledForm = styled.form`
   display: grid;
@@ -8,7 +9,7 @@ const StyledForm = styled.form`
   gap: 1rem;
   border-radius: 0.5rem;
   background-color: lightBlue;
-  padding: 2rem;
+  padding: 2rem 4rem;
 `;
 
 export function MobileLogin() {
@@ -18,7 +19,7 @@ export function MobileLogin() {
         <Input label="Company:" name="company" />
         <Input label="Name:" name="name" />
         <Input label="Email:" name="email" />
-        <button type="submit">Login</button>
+        <Button text="Login" type="submit" />
       </StyledForm>
     </>
   );

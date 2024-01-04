@@ -8,6 +8,11 @@ interface InputProps {
 
 const StyledLabel = styled.label`
   display: grid;
+  width: 150%;
+`;
+
+const StyledInput = styled.input`
+  height: 2rem;
 `;
 
 export function Input(props: InputProps) {
@@ -17,7 +22,7 @@ export function Input(props: InputProps) {
       <StyledLabel>
         <p>{label}</p>
         &nbsp;
-        <input name={name} />
+        <StyledInput name={name} />
       </StyledLabel>
     </>
   );
