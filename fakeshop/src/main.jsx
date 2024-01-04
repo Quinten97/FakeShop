@@ -9,15 +9,17 @@ import Home from "./routes/home";
 
 /** @jsx jsx */
 
+const isMobile = true;
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <Root isMobile={isMobile} />,
     errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
-        element: <Login />,
+        element: <Login isMobile={isMobile} />,
       },
       {
         path: "/home",

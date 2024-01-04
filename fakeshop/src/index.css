@@ -1,5 +1,10 @@
 * {
   box-sizing: border-box;
-  background-color: grey;
   margin: 0;
+}
+
+.outletContainer {
+  height: 100vh;
+  display: grid;
+  place-items: center;
 }

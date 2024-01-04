@@ -1,11 +1,10 @@
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "@emotion/styled";
 import { DesktopNav } from "../components/Nav/DesktopNav";
 import { MobileNav } from "../components/Nav/MobileNav";
 
-export default function Root() {
-  const isMobile = true;
-
+export default function Root(props) {
+  const { isMobile } = props;
   const Nav = styled.nav`
     color: yellow;
   `;
