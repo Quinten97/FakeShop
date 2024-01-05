@@ -2,6 +2,7 @@ import React from "react";
 import { Input } from "../input/Input";
 import styled from "@emotion/styled";
 import { Button } from "../button/StyledButton";
+import { Link } from "react-router-dom";
 
 const StyledForm = styled.form`
   display: grid;
@@ -19,7 +20,9 @@ export function MobileLogin() {
         <Input label="Company:" name="company" />
         <Input label="Name:" name="name" />
         <Input label="Email:" name="email" />
-        <Button text="Login" type="submit" />
+        <Link to="/home">
+          <Button text="Login" type="submit" />
+        </Link>
       </StyledForm>
     </>
   );
