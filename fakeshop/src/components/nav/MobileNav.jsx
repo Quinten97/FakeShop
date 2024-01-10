@@ -1,46 +1,50 @@
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
-import styled from "@emotion/styled";
 import { HamburgerMenuSvg } from "../images/svgs/HamburgerMenuSvg";
+import { CrossSvg } from "../images/svgs/CrossSvg";
 import { useState } from "react";
+import "./navStyles.css";
 
 export function MobileNav() {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
-  const Nav = styled.nav`
-    background-color: lightblue;
-    height: 4rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    place-items: center end;
-  `;
-
-  const StyledButton = styled.button`
-    margin: 0rem 0.5rem;
-    border-radius: 0.25rem;
-    border: 1px solid black;
-    z-index: 1;
-  `;
-
-  const MenuContainer = styled.div`
-    border: 1px solid black;
-    background-color: white;
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    margin-top: 51.25rem;
-    overflow-x: hidden;
-  `;
-
   return (
     <>
-      <Nav>
-        <Link to={"/home"}>Home</Link>
-        <StyledButton onClick={() => setHamburgerOpen(!hamburgerOpen)}>
-          <HamburgerMenuSvg />
-        </StyledButton>
-        {hamburgerOpen && <MenuContainer id="MenuContainer"></MenuContainer>}
-      </Nav>
+      <nav className="mobileNav">
+        <Link className="navLogo" to={"/home"}>
+          FakeShop
+        </Link>
+        <button
+          className="hamburgerButton"
+          onClick={() => setHamburgerOpen(!hamburgerOpen)}
+        >
+          {hamburgerOpen ? <CrossSvg /> : <HamburgerMenuSvg />}
+        </button>
+        <div
+          className={
+            !hamburgerOpen ? "menuContainer menuClosed" : "menuContainer"
+          }
+        >
+          <Link className="sidebarLink" to={"/home"}>
+            Home
+          </Link>
+          <Link className="sidebarLink" to={"/home"}>
+            Account
+          </Link>
+          <Link className="sidebarLink" to={"/home"}>
+            Settings
+          </Link>
+          <Link className="sidebarLink" to={"/"}>
+            Logout
+          </Link>
+        </div>
+        {hamburgerOpen && (
+          <div
+            className={"windowTint"}
+            onClick={() => setHamburgerOpen(!hamburgerOpen)}
+          ></div>
+        )}
+      </nav>
       <div className="outletContainer">
         <Outlet />
       </div>
