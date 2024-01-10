@@ -10,7 +10,6 @@ export function MobileNav() {
   const Nav = styled.nav`
     background-color: lightblue;
     height: 4rem;
-    border: 1px solid red;
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center end;
@@ -27,9 +26,9 @@ export function MobileNav() {
     border: 1px solid black;
     background-color: white;
     position: absolute;
-    width: 200px;
-    height: 200px;
-    margin-top: 8rem;
+    width: 50%;
+    height: 100%;
+    margin-top: 51.25rem;
     overflow-x: hidden;
   `;
 
